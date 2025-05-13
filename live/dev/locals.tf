@@ -63,6 +63,7 @@ locals {
   }
 
   app_name    = "lessons"
+  group_users = ["user01@example.com","user02@example.com"]
 
   domain_filters = ["abc.com"]
   txt_owner_id = "fill in"

@@ -66,3 +66,14 @@ module "external-dns" {
 
   depends_on = [ module.eks ]
 }
+
+module "iam" {
+  source = "../../modules/04-iam"
+
+  cluster_name      = local.name
+  app_name          = local.app_name
+  group_users       = local.group_users
+  trusted_role_arns = module.vpc.vpc_owner_id
+   
+  depends_on = [ module.eks ]
+}
